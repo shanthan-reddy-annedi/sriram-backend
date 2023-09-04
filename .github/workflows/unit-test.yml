@@ -9,7 +9,7 @@ jobs:
       - name: Install java
         uses: actions/setup-java@v3
         with:
-          java-version: 19.0.2
+          java-version: 17
           cache: "maven"
       - name: Install dependencies
         run: mvn clean install
