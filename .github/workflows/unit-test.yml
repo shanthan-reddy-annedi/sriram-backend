@@ -3,6 +3,19 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: learncomputers
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: 83355806
+    env:
+      SPRING_db_URL: "jdbc:postgresql://localhost:5432/learncomputers?createDatabaseIfNotExist=true"
+      SPRING_DB_USER: "postgres"
+      SPRING_db_PASS: "83355806"
     steps:
       - name: get code
         uses: actions/checkout@v3
