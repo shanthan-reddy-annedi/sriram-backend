@@ -45,6 +45,7 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
+    // have to change it many to one
     private Set<Courses> enrolledCourses = new HashSet<>();
 
     public void enrollInCourse(Courses course) {
